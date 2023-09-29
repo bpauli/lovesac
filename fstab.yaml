@@ -1,2 +1,5 @@
 mountpoints:
-  /: https://adobe.sharepoint.com/:f:/r/sites/HelixProjects/Shared%20Documents/sites/adobe/wknd/drafts/telliott/lovesac
+  /:
+    url: https://loving-seahorse-wise.ngrok-free.app/content/lovesac
+    type: markup
+    suffix: ".franklin.html?wcmmode=disabled"
