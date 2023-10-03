@@ -159,6 +159,11 @@ export default function decorate(block) {
   const heroContent = videoBanner.children[0];
   heroContent.classList.add('teaser-video-container');
 
+  // collaps 2nd and 1st row
+  const videoLinkButtonContainer = videoBanner.children[1].firstElementChild;
+  heroContent.appendChild(videoLinkButtonContainer);
+  videoBanner.children[1].remove();
+
   const teaserVideoLink = heroContent.querySelector('a');
   const teaserPicture = heroContent.querySelector('img');
 
