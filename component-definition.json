@@ -175,6 +175,8 @@
                 "template": {
                   "name": "card",
                   "model": "card",
+                  "text": "Card Text",
+                  "image": "/content/dam/lovesac/icons/configurable.png",
                   "propertyNames": [
                     "image",
                     "text"
