@@ -111,9 +111,6 @@ async function loadEager(doc) {
     await waitForLCP(LCP_BLOCKS);
   }
 
-  makeButtonsAccessible(doc);
-  makeLinksAccessible(doc);
-
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
@@ -138,6 +135,9 @@ async function loadLazy(doc) {
 
   loadHeader(doc.querySelector('header'));
   loadFooter(doc.querySelector('footer'));
+
+  makeButtonsAccessible(doc);
+  makeLinksAccessible(doc);
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
