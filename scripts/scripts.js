@@ -69,6 +69,34 @@ export function decorateMain(main) {
   decorateBlocks(main);
 }
 
+function makeButtonsAccessible(doc) {
+  const btns = doc.querySelectorAll('button');
+  for (const btn of btns) {
+    if (!btn.getAttribute('aria-label')) {
+      const parent = btn.closest('div');
+      if (parent.classList.contains('carousel-buttons')) {
+        btn.setAttribute('aria-label', 'Carousel button');
+        continue;
+      }
+      btn.setAttribute('aria-label', btn.textContent);
+    }
+  }
+}
+
+export function makeLinksAccessible(doc) {
+  const anchors = doc.querySelectorAll('a');
+  for (const anchor of anchors) {
+    const spn = anchor.querySelector('span');
+    if (!anchor.getAttribute('aria-label')) {
+      if (spn && spn.classList.contains('icon')) {
+        anchor.setAttribute('aria-label', [...spn.classList].find(e => e.startsWith('icon-')).replace('-', ' '));
+        continue;
+      }
+      anchor.setAttribute('aria-label', anchor.textContent);
+    }
+  }
+}
+
 /**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
@@ -82,6 +110,9 @@ async function loadEager(doc) {
     document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }
+
+  makeButtonsAccessible(doc);
+  makeLinksAccessible(doc);
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
