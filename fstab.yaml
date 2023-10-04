@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: https://author-p15404-e196819-cmstg.adobeaemcloud.com/
+    url: https://author-p15404-e196819-cmstg.adobeaemcloud.com/content/lovesac/
     type: markup
     suffix: ".franklin.html?wcmmode=disabled"
