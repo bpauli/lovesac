@@ -1,4 +1,5 @@
 import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
+import { makeLinksAccessible } from '../../scripts/scripts.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -122,6 +123,9 @@ export default async function decorate(block) {
         });
       });
     }
+
+    // add aria-label based on link text
+    makeLinksAccessible(nav);
 
     // hamburger for mobile
     const hamburger = document.createElement('div');
