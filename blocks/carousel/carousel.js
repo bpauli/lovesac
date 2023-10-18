@@ -15,7 +15,6 @@ export default function decorate(block) {
           name
           sku
           url_key
-          stock_status
           swatch_image
           sub_title
           small_image{
