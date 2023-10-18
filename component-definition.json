@@ -288,7 +288,7 @@
           },
           "model": {
             "uri": "",
-            "id": "slide",
+            "id": "product-carousel",
             "fields": [
               {
                 "name": "skus",
