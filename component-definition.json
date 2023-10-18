@@ -281,7 +281,8 @@
                 "template": {
                   "name": "Carousel",
                   "model": "product-carousel",
-                  "classes": ["products"]
+                  "classes": ["products"],
+                  "propertyNames": ["skus"]
                 }
               }
             }
