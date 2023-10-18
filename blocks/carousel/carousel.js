@@ -10,7 +10,7 @@ export default function decorate(block) {
       .join(',');
     const query = `
     {
-      products(filter: { sku: { in: [${skus}] } }) {
+      products(filter: { url_key: { in: [${skus}] } }) {
         items {
           name
           sku
