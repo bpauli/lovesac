@@ -74,7 +74,9 @@
             "aem": {
               "page": {
                 "resourceType": "core/franklin/components/image/v1/image",
-                "template": {}
+                "template": {
+                  "fileReference": "/content/dam/lovesac/Lovesac_Swarovski_Endless_Glamour._A_Lifetime_of_Comfort._25th_Anniversary.jpg"
+                }
               }
             }
           },
@@ -82,6 +84,13 @@
             "id": "image",
             "uri": "",
             "fields": [
+              {
+                "component": "reference",
+                "valueType": "string",
+                "name": "fileReference",
+                "label": "Image",
+                "multi": false
+              },
               {
                 "component": "text-input",
                 "valueType": "string",
